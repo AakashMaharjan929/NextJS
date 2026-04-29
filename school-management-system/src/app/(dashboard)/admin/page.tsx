@@ -3,6 +3,7 @@ import CountChart from "@/components/CountChart"
 import EventCalender from "@/components/EventCalender"
 import FinanceChart from "@/components/FinanceChart"
 import UserCard from "@/components/UserCard"
+import Announcements from "@/components/Annoucements"
 
 const AdminPage = () => {
     return (
@@ -36,6 +37,7 @@ const AdminPage = () => {
             <div className="w:full lg:w-1/3"> 
                 {/* CALENDAR */}
                 <EventCalender />
+                <Announcements />
             </div>
         </div>
     )
