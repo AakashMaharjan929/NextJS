@@ -52,7 +52,7 @@ const FormModal = ({
       ? "bg-AakashYellow"
       : type === "update"
       ? "bg-AakashSky"
-      : "bg-lamaPurple";
+      : "bg-AakashPurple";
 
   const [open, setOpen] = useState(false);
 
