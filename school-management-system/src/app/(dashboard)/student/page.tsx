@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import BigCalendar from "@/components/BigCalendar"
 import EventCalendar from "@/components/EventCalender"
-import Announcements from "@/components/Annoucements"
+import Announcements from "@/components/Announcements"
 
 const StudentPage = () => {
   return (

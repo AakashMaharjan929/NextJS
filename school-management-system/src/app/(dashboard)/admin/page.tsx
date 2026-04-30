@@ -3,7 +3,7 @@ import CountChart from "@/components/CountChart"
 import EventCalender from "@/components/EventCalender"
 import FinanceChart from "@/components/FinanceChart"
 import UserCard from "@/components/UserCard"
-import Announcements from "@/components/Annoucements"
+import Announcements from "@/components/Announcements"
 
 const AdminPage = () => {
     return (
