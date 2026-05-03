@@ -918,151 +918,117 @@ export const announcementsData = [
 
 // YOU SHOULD CHANGE THE DATES OF THE EVENTS TO THE CURRENT DATE TO SEE THE EVENTS ON THE CALENDAR
 export const calendarEvents = [
-  // Monday (Apr 27, 2026)
+  // Sunday (May 3, 2026)
   {
     title: "Math",
     allDay: false,
-    start: new Date(2026, 3, 27, 8, 0),
-    end: new Date(2026, 3, 27, 8, 45),
+    start: new Date(2026, 4, 3, 8, 0),
+    end: new Date(2026, 4, 3, 8, 45),
   },
   {
     title: "English",
     allDay: false,
-    start: new Date(2026, 3, 27, 9, 0),
-    end: new Date(2026, 3, 27, 9, 45),
+    start: new Date(2026, 4, 3, 9, 0),
+    end: new Date(2026, 4, 3, 9, 45),
+  },
+
+  // Monday (May 4, 2026)
+  {
+    title: "Math",
+    allDay: false,
+    start: new Date(2026, 4, 4, 8, 0),
+    end: new Date(2026, 4, 4, 8, 45),
+  },
+  {
+    title: "English",
+    allDay: false,
+    start: new Date(2026, 4, 4, 9, 0),
+    end: new Date(2026, 4, 4, 9, 45),
   },
   {
     title: "Biology",
     allDay: false,
-    start: new Date(2026, 3, 27, 10, 0),
-    end: new Date(2026, 3, 27, 10, 45),
+    start: new Date(2026, 4, 4, 10, 0),
+    end: new Date(2026, 4, 4, 10, 45),
   },
   {
     title: "Physics",
     allDay: false,
-    start: new Date(2026, 3, 27, 11, 0),
-    end: new Date(2026, 3, 27, 11, 45),
+    start: new Date(2026, 4, 4, 11, 0),
+    end: new Date(2026, 4, 4, 11, 45),
+  },
+
+  // Tuesday (May 5, 2026)
+  {
+    title: "English",
+    allDay: false,
+    start: new Date(2026, 4, 5, 9, 0),
+    end: new Date(2026, 4, 5, 9, 45),
+  },
+  {
+    title: "Biology",
+    allDay: false,
+    start: new Date(2026, 4, 5, 10, 0),
+    end: new Date(2026, 4, 5, 10, 45),
+  },
+  {
+    title: "History",
+    allDay: false,
+    start: new Date(2026, 4, 5, 14, 0),
+    end: new Date(2026, 4, 5, 14, 45),
+  },
+
+  // Wednesday (May 6, 2026)
+  {
+    title: "Math",
+    allDay: false,
+    start: new Date(2026, 4, 6, 8, 0),
+    end: new Date(2026, 4, 6, 8, 45),
+  },
+  {
+    title: "Biology",
+    allDay: false,
+    start: new Date(2026, 4, 6, 10, 0),
+    end: new Date(2026, 4, 6, 10, 45),
   },
   {
     title: "Chemistry",
     allDay: false,
-    start: new Date(2026, 3, 27, 13, 0),
-    end: new Date(2026, 3, 27, 13, 45),
-  },
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2026, 3, 27, 14, 0),
-    end: new Date(2026, 3, 27, 14, 45),
+    start: new Date(2026, 4, 6, 15, 0),
+    end: new Date(2026, 4, 6, 15, 45),
   },
 
-  // Tuesday (Apr 28, 2026)
+  // Thursday (May 7, 2026)
   {
     title: "English",
     allDay: false,
-    start: new Date(2026, 3, 28, 9, 0),
-    end: new Date(2026, 3, 28, 9, 45),
-  },
-  {
-    title: "Biology",
-    allDay: false,
-    start: new Date(2026, 3, 28, 10, 0),
-    end: new Date(2026, 3, 28, 10, 45),
+    start: new Date(2026, 4, 7, 9, 0),
+    end: new Date(2026, 4, 7, 9, 45),
   },
   {
     title: "Physics",
     allDay: false,
-    start: new Date(2026, 3, 28, 11, 0),
-    end: new Date(2026, 3, 28, 11, 45),
+    start: new Date(2026, 4, 7, 11, 0),
+    end: new Date(2026, 4, 7, 11, 45),
   },
   {
     title: "History",
     allDay: false,
-    start: new Date(2026, 3, 28, 14, 0),
-    end: new Date(2026, 3, 28, 14, 45),
+    start: new Date(2026, 4, 7, 14, 0),
+    end: new Date(2026, 4, 7, 14, 45),
   },
 
-  // Wednesday (Apr 29, 2026)
+  // Friday (May 8, 2026)
   {
     title: "Math",
     allDay: false,
-    start: new Date(2026, 3, 29, 8, 0),
-    end: new Date(2026, 3, 29, 8, 45),
-  },
-  {
-    title: "Biology",
-    allDay: false,
-    start: new Date(2026, 3, 29, 10, 0),
-    end: new Date(2026, 3, 29, 10, 45),
+    start: new Date(2026, 4, 8, 8, 0),
+    end: new Date(2026, 4, 8, 8, 45),
   },
   {
     title: "Chemistry",
     allDay: false,
-    start: new Date(2026, 3, 29, 13, 0),
-    end: new Date(2026, 3, 29, 13, 45),
-  },
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2026, 3, 29, 14, 0),
-    end: new Date(2026, 3, 29, 14, 45),
-  },
-
-  // Thursday (Apr 30, 2026)
-  {
-    title: "English",
-    allDay: false,
-    start: new Date(2026, 3, 30, 9, 0),
-    end: new Date(2026, 3, 30, 9, 45),
-  },
-  {
-    title: "Biology",
-    allDay: false,
-    start: new Date(2026, 3, 30, 10, 0),
-    end: new Date(2026, 3, 30, 10, 45),
-  },
-  {
-    title: "Physics",
-    allDay: false,
-    start: new Date(2026, 3, 30, 11, 0),
-    end: new Date(2026, 3, 30, 11, 45),
-  },
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2026, 3, 30, 14, 0),
-    end: new Date(2026, 3, 30, 14, 45),
-  },
-
-  // Friday (May 1, 2026)
-  {
-    title: "Math",
-    allDay: false,
-    start: new Date(2026, 4, 1, 8, 0),
-    end: new Date(2026, 4, 1, 8, 45),
-  },
-  {
-    title: "English",
-    allDay: false,
-    start: new Date(2026, 4, 1, 9, 0),
-    end: new Date(2026, 4, 1, 9, 45),
-  },
-  {
-    title: "Physics",
-    allDay: false,
-    start: new Date(2026, 4, 1, 11, 0),
-    end: new Date(2026, 4, 1, 11, 45),
-  },
-  {
-    title: "Chemistry",
-    allDay: false,
-    start: new Date(2026, 4, 1, 13, 0),
-    end: new Date(2026, 4, 1, 13, 45),
-  },
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2026, 4, 1, 14, 0),
-    end: new Date(2026, 4, 1, 14, 45),
+    start: new Date(2026, 4, 8, 13, 0),
+    end: new Date(2026, 4, 8, 13, 45),
   },
 ];

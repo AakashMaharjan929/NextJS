@@ -70,7 +70,7 @@ const SingleTeacherPage = () => {
             </div>
           </div>
           {/* SMALL CARDS */}
-          <div className="flex-1 flex gap-4 justify-between flex-wrap">
+          <div className="flex-1 flex gap-2 justify-between flex-wrap">
             {/* CARD */}
             <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
               <Image
@@ -140,19 +140,19 @@ const SingleTeacherPage = () => {
         <div className="bg-white p-4 rounded-md">
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-            <Link className="p-3 rounded-md bg-AakashSkyLight" href="/">
+            <Link className="p-3 rounded-md bg-AakashSkyLight" href="/list/classes">
               Teacher&apos;s Classes
             </Link>
-            <Link className="p-3 rounded-md bg-AakashPurpleLight" href="/">
+            <Link className="p-3 rounded-md bg-AakashPurpleLight" href="/list/students">
               Teacher&apos;s Students
             </Link>
-            <Link className="p-3 rounded-md bg-AakashYellowLight" href="/">
+            <Link className="p-3 rounded-md bg-AakashYellowLight" href="/list/lessons">
               Teacher&apos;s Lessons
             </Link>
-            <Link className="p-3 rounded-md bg-pink-50" href="/">
+            <Link className="p-3 rounded-md bg-pink-50" href="/list/exams">
               Teacher&apos;s Exams
             </Link>
-            <Link className="p-3 rounded-md bg-AakashSkyLight" href="/">
+            <Link className="p-3 rounded-md bg-AakashSkyLight" href="/list/assignments">
               Teacher&apos;s Assignments
             </Link>
           </div>
