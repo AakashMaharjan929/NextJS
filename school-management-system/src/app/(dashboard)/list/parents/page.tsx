@@ -2,20 +2,22 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { prisma } from "@/lib/prsima";
+import {prisma} from "@/lib/prsima";
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import { Parent, Prisma, Student } from "@prisma/client";
 import Image from "next/image";
 
-// import { auth } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 
 type ParentList = Parent & { students: Student[] };
 
 const ParentListPage = async (props: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) => {
-// const { sessionClaims } = auth();
-// const role = (sessionClaims?.metadata as { role?: string })?.role;
+  const searchParams = await props.searchParams;
+
+const { sessionClaims } = await auth();
+const role = (sessionClaims?.metadata as { role?: string })?.role;
 
 
 const columns = [
@@ -38,14 +40,14 @@ const columns = [
     accessor: "address",
     className: "hidden lg:table-cell",
   },
-  // ...(role === "admin"
-  //   ? [
-  //       {
-  //         header: "Actions",
-  //         accessor: "action",
-  //       },
-  //     ]
-  //   : []),
+  ...(role === "admin"
+    ? [
+        {
+          header: "Actions",
+          accessor: "action",
+        },
+      ]
+    : []),
 ];
 
 const renderRow = (item: ParentList) => (
@@ -66,18 +68,18 @@ const renderRow = (item: ParentList) => (
     <td className="hidden md:table-cell">{item.address}</td>
     <td>
       <div className="flex items-center gap-2">
-            {/* {role === "admin" && (
-              <>
-                <FormContainer table="parent" type="update" data={item} />
-                <FormContainer table="parent" type="delete" id={item.id} />
-              </>
-            )} */}
+        {/* {role === "admin" && (
+          <>
+            <FormContainer table="parent" type="update" data={item} />
+            <FormContainer table="parent" type="delete" id={item.id} />
+          </>
+        )} */}
       </div>
     </td>
   </tr>
 );
 
-  const { page, ...queryParams } = await props.searchParams;
+  const { page, ...queryParams } = searchParams;
 
   const p = page ? parseInt(page) : 1;
 
@@ -125,7 +127,7 @@ const renderRow = (item: ParentList) => (
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-AakashYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {/* {role === "admin" && <FormContainer table="parent" type="create" />} */}
+            {/* {role === "admin" && <FormContainer table="parent" type="create" />} */}  
           </div>
         </div>
       </div>
