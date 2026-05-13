@@ -5,7 +5,14 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
    images: {
     domains: ["images.pexels.com"],
+    remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "res.cloudinary.com",
+    },
+  ],
   },
+
 };
 
 export default nextConfig;
