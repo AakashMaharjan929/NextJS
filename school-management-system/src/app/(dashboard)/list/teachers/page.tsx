@@ -1,14 +1,13 @@
-export const dynamic = "force-dynamic";
-// import FormContainer from "@/components/FormContainer";
+import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { prisma } from "@/lib/prsima";
+import {prisma} from "@/lib/prsima";
 import { Class, Prisma, Subject, Teacher } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { ITEM_PER_PAGE } from "@/lib/settings";
-// import { auth } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 
 type TeacherList = Teacher & { subjects: Subject[] } & { classes: Class[] };
 
@@ -16,8 +15,10 @@ const TeacherListPage = async (props: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) => {
   const searchParams = await props.searchParams;
-  // const { sessionClaims } = auth();
-  // const role = (sessionClaims?.metadata as { role?: string })?.role;
+
+
+  const { sessionClaims } = await auth();
+  const role = (sessionClaims?.metadata as { role?: string })?.role;
   const columns = [
     {
       header: "Info",
@@ -48,14 +49,14 @@ const TeacherListPage = async (props: {
       accessor: "address",
       className: "hidden lg:table-cell",
     },
-    // ...(role === "admin"
-    //   ? [
-    //       {
-    //         header: "Actions",
-    //         accessor: "action",
-    //       },
-    //     ]
-    //   : []),
+    ...(role === "admin"
+      ? [
+          {
+            header: "Actions",
+            accessor: "action",
+          },
+        ]
+      : []),
   ];
 
   const renderRow = (item: TeacherList) => (
@@ -92,17 +93,17 @@ const TeacherListPage = async (props: {
               <Image src="/view.png" alt="" width={16} height={16} />
             </button>
           </Link>
-          {/* {role === "admin" && (
+          {role === "admin" && (
             // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-AakashPurple">
             //   <Image src="/delete.png" alt="" width={16} height={16} />
             // </button>
             <FormContainer table="teacher" type="delete" id={item.id} />
-          )} */}
+          )}
         </div>
       </td>
     </tr>
   );
-  const { page, ...queryParams } = searchParams;
+const { page, ...queryParams } = searchParams || {};
 
   const p = page ? parseInt(page) : 1;
 
@@ -158,9 +159,9 @@ const TeacherListPage = async (props: {
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-AakashYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {/* {role === "admin" && (
+            {role === "admin" && (
               <FormContainer table="teacher" type="create" />
-            )} */}
+            )}
           </div>
         </div>
       </div>

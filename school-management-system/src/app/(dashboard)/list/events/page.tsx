@@ -114,18 +114,36 @@ const EventListPage = async (props: {
 
   // ROLE CONDITIONS
 
-  const roleConditions = {
-    teacher: { lessons: { some: { teacherId: currentUserId! } } },
-    student: { students: { some: { id: currentUserId! } } },
-    parent: { students: { some: { parentId: currentUserId! } } },
-  };
+  // ROLE CONDITIONS
+const roleConditions = {
+  teacher: { lessons: { some: { teacherId: currentUserId! } } },
+  student: { students: { some: { id: currentUserId! } } },
+  parent: { students: { some: { parentId: currentUserId! } } },
+};
 
-  query.OR = [
-    { classId: null },
-    {
-      class: roleConditions[role as keyof typeof roleConditions] || {},
-    },
-  ];
+
+// 1. Search (if any)
+if (queryParams?.search) {
+  query.title = { 
+    contains: queryParams.search, 
+    mode: "insensitive" 
+  };
+}
+
+// 2. Role-based filtering
+if (role === "admin") {
+  // Admin sees ALL events → no extra condition
+} else {
+  const roleCondition = roleConditions[role as keyof typeof roleConditions];
+  
+  if (roleCondition) {
+    query.OR = [
+      { classId: null },           // Global events
+      { class: roleCondition },    // Events related to user's class(es)
+    ];
+  }
+  // If role is unknown, show nothing or handle accordingly
+}
 
   const [data, count] = await prisma.$transaction([
     prisma.event.findMany({
