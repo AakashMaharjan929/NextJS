@@ -2,7 +2,7 @@ import Announcements from "@/components/Announcements";
 import BigCalendarContainer from "@/components/BigCalendarContainer";
 import BigCalendar from "@/components/BigCalendar";
 import EventCalendar from "@/components/EventCalender";
-import {prisma} from "@/lib/prsima";
+import { prisma } from "@/lib/prsima";
 import { auth } from "@clerk/nextjs/server";
 
 const StudentPage = async () => {

@@ -3,7 +3,7 @@ import BigCalendarContainer from "@/components/BigCalendarContainer";
 import FormContainer from "@/components/FormContainer";
 import Performance from "@/components/Performance";
 import StudentAttendanceCard from "@/components/StudentAttendanceCard";
-import {prisma} from "@/lib/prsima";
+import { prisma } from "@/lib/prsima";
 import { auth } from "@clerk/nextjs/server";
 import { Class, Student } from "@prisma/client";
 import Image from "next/image";
@@ -22,14 +22,14 @@ const SingleStudentPage = async (props: {
 
   const student:
     | (Student & {
-        class: Class & { _count: { lessons: number } };
-      })
+      class: Class & { _count: { lessons: number } };
+    })
     | null = await prisma.student.findUnique({
-    where: { id },
-    include: {
-      class: { include: { _count: { select: { lessons: true } } } },
-    },
-  });
+      where: { id },
+      include: {
+        class: { include: { _count: { select: { lessons: true } } } },
+      },
+    });
 
   if (!student) {
     return notFound();

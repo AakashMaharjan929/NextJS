@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 School Management System
 
-## Getting Started
+A modern, full-stack School Management System built with **Next.js 15**, **Tailwind CSS**, **Prisma**, and **Clerk**. This application provides a comprehensive dashboard for administrators, teachers, students, and parents to manage academic activities efficiently.
 
-First, run the development server:
+---
 
+## 📸 Screenshots
+
+| Admin Dashboard | Student Details |
+| :---: | :---: |
+| ![Admin Dashboard](./public/screenshots/admin-dashboard.png) | ![Student Details](./public/screenshots/student-details.png) |
+
+| Teacher List | Teacher Details |
+| :---: | :---: |
+| ![Teacher List](./public/screenshots/teacher-list.png) | ![Teacher Details](./public/screenshots/teacher-details.png) |
+
+
+---
+
+## ✨ Key Features
+
+### 🏢 Multi-Role Dashboards
+- **Admin**: Full control over teachers, students, parents, classes, and subjects. View school-wide statistics and announcements.
+- **Teacher**: Manage class schedules, track student attendance, and view assigned lessons.
+- **Student**: View personal schedules, exam results, assignments, and school events.
+- **Parent**: Monitor child's academic performance, attendance records, and upcoming school activities.
+
+### 📚 Academic Management
+- **User Management**: Comprehensive CRUD operations for Teachers, Students, and Parents.
+- **Class & Subject Handling**: Organize curriculum by linking teachers to subjects and classes.
+- **Lesson Scheduling**: Interactive calendar view for tracking weekly lessons and timings.
+- **Exams & Assignments**: Create and manage assessments with automated result tracking.
+- **Attendance**: Streamlined system for recording student presence.
+
+### 📢 Communication & Events
+- **Announcements**: School-wide or class-specific broadcast messages.
+- **Event Calendar**: Integrated calendar for tracking school holidays, meetings, and extra-curricular activities.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Authentication**: [Clerk](https://clerk.com/) (Role-based access control)
+- **Database**: [PostgreSQL](https://www.postgresql.org/)
+- **ORM**: [Prisma](https://www.prisma.io/)
+- **Charts**: [Recharts](https://recharts.org/)
+- **Calendars**: [React Big Calendar](https://jquense.github.io/react-big-calendar/)
+- **Forms**: React Hook Form & Zod
+- **Storage**: Cloudinary (via `next-cloudinary`)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+- Node.js 18+ 
+- PostgreSQL database (Local or Cloud like Supabase/Neon)
+- Clerk Account
+
+### 2. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AakashMaharjan929/NextJS/school-management-system.git
+cd school-management-system
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Environment Setup
+Create a `.env` file in the root directory and add your credentials:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/school_db"
 
-## Learn More
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 
-To learn more about Next.js, take a look at the following resources:
+# Cloudinary (Optional for Image Uploads)
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="..."
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 5. Database Migration & Seeding
+```bash
+npx prisma migrate dev --name init
+npx prisma db seed
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 6. Run the Application
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🐳 Docker Support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can also run the application using Docker:
+
+```bash
+docker-compose up --build
+```
+
+---
+
+## 📂 Project Structure
+
+- `src/app`: Next.js App Router (Dashboards, Lists, Auth)
+- `src/components`: Reusable UI components (Charts, Forms, Tables)
+- `src/lib`: Utility functions and Prisma client
+- `prisma`: Database schema and seed scripts
+- `public`: Static assets (Icons, Screenshots)
+
+---
+
+Built with ❤️ by [Aakash Maharjan](https://github.com/AakashMaharjan929)

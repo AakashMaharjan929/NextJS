@@ -1,13 +1,15 @@
 import BigCalendar from "@/components/BigCalendar";
 import Announcements from "@/components/Announcements";
+import { currentUser } from "@clerk/nextjs/server";
 
-const ParentPage = () => {
+const ParentPage = async () => {
+  const user = await currentUser();
   return (
     <div className="flex-1 p-4 flex gap-4 flex-col xl:flex-row">
       {/* LEFT */}
       <div className="w-full xl:w-2/3">
         <div className="h-full bg-white p-4 rounded-md">
-          <h1 className="text-xl font-semibold">Schedule (John Doe)</h1>
+          <h1 className="text-xl font-semibold">Schedule ({user?.username})</h1>
           <BigCalendar />
         </div>
       </div>
