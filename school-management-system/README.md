@@ -8,7 +8,7 @@ A modern, full-stack School Management System built with **Next.js 15**, **Tailw
 
 | Admin Dashboard | Student Details |
 | :---: | :---: |
-| ![Admin Dashboard](./public/screenshots/admin-dashboard.png) | ![Student Details](./public/screenshots/student-details.png) |
+| ![Admin Dashboard](./public/screenshots/admin-dashboard.png) | ![Student Details](./public/screenshots/Student-details.png) |
 
 | Teacher List | Teacher Details |
 | :---: | :---: |
